@@ -13,15 +13,26 @@ public class Main {
 		ArrayList<String> piadas = new ArrayList();
 		piadas.add(" Qual é o peixe baterista ? A truta !");
 		piadas.add(" Qual é o peixe que cai do céu? Atum !");
-		Resposta rs5 = new RespostaAleatoria ("piada", piadas );
-  		Resposta rs4 = new RespostaHora("dia");
+		Resposta rs4 = new RespostaAleatoria ("piada", piadas );
+  		Resposta rs5 = new RespostaHora("hora");
+  		Resposta rs6 = new RespostaData("dia");
     
     
 		bot.adiciona(rs1);
 		bot.adiciona(rs2);
 		bot.adiciona(rs3);
 		bot.adiciona(rs4);
-		System.out.println(bot.processar("dia"));
+		bot.adiciona(rs5);
+		bot.adiciona(rs6);
+		//System.out.println(bot.processar("dia"));
+		Scanner entrada = new Scanner ( System . in);
+		String texto ;
+		// loop infinito para ficar lendo as perguntas do usuario
+		while ( true ) {
+			System.out.print("> ");
+			texto = entrada.nextLine ();
+			System.out.println(bot.processar( texto ));
+		}
 	
 	}
 }
